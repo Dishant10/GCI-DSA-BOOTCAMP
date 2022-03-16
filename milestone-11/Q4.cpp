@@ -2,25 +2,18 @@
 using namespace std;
 int main(){
     int arr[10];
-      for(int i=0;i<10;i++)
+      for(int i=0;i<5;i++)
 { 
     int number;
     cin>>number;
     arr[i]=number;
 }
-
-int newArray[10];
-int i=9,j=0;
-while(i>=0 && j<10)
+int multiplyConstant=1,sumConstant=0;
+for(int i=0;i<5;++i)
 {
-    newArray[j]=arr[i];
-    i--;
-    j++;
+   multiplyConstant=multiplyConstant*arr[i];
+   sumConstant=sumConstant+arr[i];
 }
-
-cout<<endl;
-for(int i=0;i<10;++i)
-{
-    cout<<newArray[i]<<" ";
-}
+cout<<multiplyConstant<<endl;
+cout<<sumConstant<<endl;
 }
