@@ -10,11 +10,10 @@ int main(){
         cin>>number;
         arr[i]=number;
     }
-    cout<<"All the negative elements "<<"\n";
+    int sum=0;
     for(int ele:arr){
-        if(ele<0){
-              cout<<ele;
-        }
-       
+        
+       sum=sum+ele;
     }
+    cout<<"\n Total sum = "<<sum;
 }
