@@ -30,60 +30,48 @@ for(int i=0;i<size;++i){
     arr[i]=number;
 }
 int minimumEle=checkMin(arr,size);
-
-if(minimumEle % 2 == 0){
-    cout<<"Even";
+if(minimumEle % 2 == 0 || minimumEle == 0){
 for(int i=0;i<size;++i){
     if(arr[i] % 2 == 0){
-    for(int j=i+1;j<size;++j){
-        
-            cout<<"Even";
-            // if(arr[i]>arr[j]){
-            //     int temp=arr[i];
-            //     arr[i]=arr[j];
-            //     arr[j]=temp;
-            // }
+        arr[i]=arr[i]*-1;
+    }
+}
+for(int i=0;i<size;++i){
+    for(int j=0;j<size;++j){
+        if(arr[i]>arr[j]){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
         }
     }
 }
-// for(int i=countEven-1;i<size;++i){
-//     for(int j=i+1;j<size;++j){
-//          if(arr[i]>arr[j]){
-//                 int temp=arr[i];
-//                 arr[i]=arr[j];
-//                 arr[j]=temp;
-//             }
-//     }
-// }
+
 }
 else if(minimumEle % 2 != 0){
-    cout<<"Odd";
-for(int i=0;i<size;++i){
-    if(arr[i]%2 != 0){
-    for(int j=i+1;j<size;++j){
-        
-            cout<<"Odd";
-            // if(arr[i]>arr[j]){
-            //     int temp=arr[i];
-            //     arr[i]=arr[j];
-            //     arr[j]=temp;
-            // }
+    for(int i=0;i<size;++i){
+        if(arr[i] % 2 != 0){
+            arr[i]=arr[i]*-1;
         }
     }
-    
+
+
+    for(int i=0;i<size;++i){
+    for(int j=0;j<size;++j){
+        if(arr[i]>arr[j]){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+        }
+    }
 }
-// for(int i=countOdd-1;i<size;++i){
-//     for(int j=i+1;j<size;++j){
-//          if(arr[i]>arr[j]){
-//                 int temp=arr[i];
-//                 arr[i]=arr[j];
-//                 arr[j]=temp;
-//             }
-//     }
-// }
+
 }
+
 cout<<"Sorted array ";
 for(int ele:arr){
-    cout<<ele;
+    if(ele < 0){
+        ele=ele*-1;
+    }
+    cout<<ele<<" ";
 }
 }
